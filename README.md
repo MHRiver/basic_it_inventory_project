@@ -18,4 +18,17 @@ This image is entering the
 
 <img width="572" height="104" alt="image" src="https://github.com/user-attachments/assets/fd51efbf-5378-4ebe-a3e5-5190e9c0cd30" />
 
-<img width="572" height="104" alt="image" src="https://github.com/user-attachments/assets/bb8ab1cd-65a6-4403-9f63-75c305c70b7f" />
+<img width="574" height="209" alt="image" src="https://github.com/user-attachments/assets/ffefe0df-bd96-461a-ae08-f006b854f7f2" />
+
+<img width="914" height="794" alt="image" src="https://github.com/user-attachments/assets/65d334f0-36f9-438d-8666-69acc700133a" />
+
+<img width="762" height="75" alt="image" src="https://github.com/user-attachments/assets/8458aac9-654d-4430-8c63-69f23cada2dc" />
+
+<img width="589" height="188" alt="image" src="https://github.com/user-attachments/assets/21a8f66e-d33c-4575-b3c3-136476a0e959" />
+
+
+needed to nano into the config file and change the bind-address to 0.0.0.0 and leave the mysqlx bind at loop back address
+<img width="1201" height="717" alt="image" src="https://github.com/user-attachments/assets/fa74eae5-f437-432e-bb46-84f6acedef32" />
+
+
+
