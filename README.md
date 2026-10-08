@@ -2,6 +2,8 @@
 
 Project for CS100.
 
+'mhriver' is a throw away password REPLACE it with YOUR OWN
+
 This project is a Python program that connects to MySQL running on a locally hosted virtual machine (VM). It helps keep device information, including IP addresses and device details, organized in a database.
 
 ## What the program does
