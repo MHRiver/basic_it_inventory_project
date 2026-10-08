@@ -1,5 +1,17 @@
 import mysql.connector #this is the library that allows us to connect to MySQL databases
 
+BLUE = "\033[94m"
+RESET = "\033[0m"
+
+print(BLUE + """
+██████╗ ██╗██╗   ██╗███████╗██████╗
+██╔══██╗██║██║   ██║██╔════╝██╔══██╗
+██████╔╝██║██║   ██║█████╗  ██████╔╝
+██╔══██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+██║  ██║██║ ╚████╔╝ ███████╗██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝
+""" + RESET)
+print()
 # The fields in the table devices are as follows:
 # - id: an integer that is the primary key for the table
 # - name: a string that is the name of the device
@@ -14,7 +26,8 @@ def show_menu():
     print('1. Add Device')
     print('2. View Devices')
     print('3. Update Device')
-    print('4. Exit')
+    print('4. Delete Device')
+    print('5. Exit')
     print()
 
 def add_device(cursor, db):
@@ -70,7 +83,23 @@ def update_device(cursor, db):
 
     print('Device updated successfully!')
 
+def delete_device(cursor, db):
+    id = input('Enter the ID of the device you want to delete: ')
 
+    sql = '''
+    DELETE FROM devices
+    WHERE id = %s
+    '''
+
+    values = (id,)
+
+    cursor.execute(sql, values)
+    db.commit()
+
+    if cursor.rowcount > 0:
+        print(f'Item ID: {id} was successfully deleted.')
+    else:
+        print(f'No device with ID {id} was found.')
 
 db = mysql.connector.connect(   #checking to see if we can connect to the database 
     host="127.0.0.1",   #the db variable is now a connection object that we can use to interact with the database
@@ -82,14 +111,14 @@ db = mysql.connector.connect(   #checking to see if we can connect to the databa
 
 cursor = db.cursor() #create a cursor object that we can use to execute SQL queries
 
-
-
 print("Connected to MySQL!") #print a message to the console to confirm the connection
+
+
 
 while True:
     show_menu() #call the show_menu function to display the menu options to the user
 
-    choice = input("Enter your choice (1/2/3/4): ") #prompt the user to enter their choice
+    choice = input("Enter your choice (1/2/3/4/5): ") #prompt the user to enter their choice
 
     if choice == "1":
         print('Add Device Selected')
@@ -104,6 +133,10 @@ while True:
         print()
         update_device(cursor, db)
     elif choice == '4':
+        print('Delete item selected')
+        print()
+        delete_device(cursor, db)
+    elif choice == '5':
         print('Exiting...')
         break
     else:
