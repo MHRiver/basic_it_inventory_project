@@ -105,7 +105,7 @@ db = mysql.connector.connect(   #checking to see if we can connect to the databa
     host="127.0.0.1",   #the db variable is now a connection object that we can use to interact with the database
     user="inventory_app",
     port = 3306,
-    password="mhriver",
+    password="YOUR_MYSQL_PASSWORD_HERE",
     database="it_inventory"
 )
 
